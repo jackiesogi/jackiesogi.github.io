@@ -33,6 +33,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+
+nav a {
+    cursor: pointer;
+}
+
 /* Style the hero section */
 .hero {
     text-align: center;
@@ -98,4 +103,4 @@ footer p {
 }
 
 .project p {
-    font-size: 1rem;
+    font-size: 1rem;  
