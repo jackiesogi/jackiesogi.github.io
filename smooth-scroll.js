@@ -4,13 +4,13 @@
 function scrollToSection(target) {
     const targetElement = document.querySelector(target);
     if (targetElement) {
-        window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: 'smooth'
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
         });
     }
 }
-
 // Add a click event listener to all navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

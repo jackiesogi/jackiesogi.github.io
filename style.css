@@ -86,6 +86,14 @@ footer p {
     color: #ffffff;
 }
 
+/* #about {
+    background-color: #1a1a1a;
+} */
+
+/* #portfolio {
+    background-color: #121212;
+} */
+
 .project {
     text-align: center;
     padding: 20px;
@@ -103,4 +111,14 @@ footer p {
 }
 
 .project p {
-    font-size: 1rem;  
+    font-size: 1rem;
+    font-family: "Arial", serif;
+    /* text-align: left; */
+}
+
+.project a {
+    color: rgb(182, 182, 255); /* Change the color to your desired color */
+    font-family: Arial, sans-serif; /* Change the font family to your desired font */
+    font-size: 16px; /* Change the font size to your desired size */
+    /* text-align: left; */
+}
