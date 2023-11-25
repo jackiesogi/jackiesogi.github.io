@@ -42,6 +42,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Change color on hover */
+nav ul li a:hover {
+    color: #d4d4d4; /* Set the color for hover state */
+    /* Additional styles for hover if needed */
+}
 
 nav a {
     cursor: pointer;
@@ -136,4 +141,16 @@ footer p {
     font-family: Arial, sans-serif; /* Change the font family to your desired font */
     font-size: 16px; /* Change the font size to your desired size */
     /* text-align: left; */
+}
+
+/* Style for the contact email link */
+.contact-link {
+    color: #ffb963; /* Set the color you want for the link */
+    text-decoration: none; /* Remove underline */
+    /* Add any other styles you want for the link */
+}
+
+.contact-link:hover {
+    text-decoration: underline; /* Underline on hover, if desired */
+    /* Additional styles for hover if needed */
 }
