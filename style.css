@@ -4,6 +4,15 @@ body, h1, h2, p, ul, li {
     padding: 0;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* 調整背景色或其他樣式 */
+    z-index: 1000; /* 如果有其他定位元素，確保header在最上層 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 可選的陰影效果 */
+}
+
 /* Set background and text color for the entire page */
 body {
     background-color: #121212;
@@ -40,14 +49,20 @@ nav a {
 
 /* Style the hero section */
 .hero {
+    padding-top: 150px;
     text-align: center;
-    padding: 100px 0;
 }
 
 .hero h1 {
     font-size: 3rem;
     color: #ffffff;
 }
+
+.hero section {
+    padding-top: 300px 0;
+    font-size: 3rem;
+}
+
 
 /* Style content sections */
 .section {
