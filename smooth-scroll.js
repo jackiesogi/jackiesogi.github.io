@@ -1,21 +1,35 @@
-// smooth-scroll.js
+// Smooth scroll function
+function smoothScroll(target, duration) {
+    var targetSection = document.querySelector(target);
+    var targetPosition = targetSection.getBoundingClientRect().top;
+    var startPosition = window.pageYOffset || window.scrollY;
+    var startTime = null;
 
-// Function to smoothly scroll to the target section
-function scrollToSection(target) {
-    const targetElement = document.querySelector(target);
-    if (targetElement) {
-        targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-            inline: 'nearest'
-        });
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, targetPosition, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
     }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
 }
-// Add a click event listener to all navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+
+// Smooth scroll on click
+var links = document.querySelectorAll('header a');
+
+links.forEach(function(link) {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = this.getAttribute('href');
-        scrollToSection(target);
+        var target = this.getAttribute('href');
+        smoothScroll(target, 500); // 捲動時間為1秒（1000毫秒）
     });
 });
