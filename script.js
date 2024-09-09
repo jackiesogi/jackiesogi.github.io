@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showLoading(); // Show the loading spinner
 
         try {
-            const response = await fetch('/chat', {
+	    // DO NOT WANT TO DO SOMETHING WIERD TO THIS ENDPOINT, IT HAS FIREWALL 
+            const response = await fetch('34.80.67.36/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: userInputValue, mode: modeSelect.value })
