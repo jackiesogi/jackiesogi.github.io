@@ -1,87 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Oh Jackie - Personal Webpage</title>
-    
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#projects">Projects</a></li> <!-- New projects section -->
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <img src="./img/personal.jpg" alt="Your Name" class="profile-photo">
-            <h1>Jackie Chen</h1>
-            <p>C/C++ Developer&nbsp;&nbsp;|&nbsp;&nbsp;Security Enthusiast&nbsp;&nbsp;|&nbsp;&nbsp;Linux Enthusiast</p>
-        </div>
-    </section>
-    
-    <section id="about" class="section">
-        <div class="content">
-            <h2>About Me</h2>
-            <p>I'm a passionate student from NCU(Taiwan) with a strong curiosity for low-level programming and Linux exploration. I dabble in kernel tinkering and create small, custom terminal tools for fun and learning.</p>
-        </div>
-    </section>
-    
-    <section id="portfolio" class="section">
-        <div class="content">
-            <h2>Portfolio</h2>
-            <!-- Add your portfolio projects here -->
-        </div>
-    </section>
-    
-    <section id="projects" class="section"> <!-- New projects section -->
-        <div class="content">
-            <h2>Projects</h2>
-            <div class="project">
-                <img src="./img/pairup.png" alt="Project 1">
-                <h4>PairUP</h4>
-                <a href="https://github.com/jackiesogi/PairUP" target="_blank" style="text-align: left;">Take a look at PairUP on Github</a>
-                <p>PairUP is a project established for English speaking study group. It solves the problem of manually matching practice partners every day, improving the operational efficiency of the study group.</p>
-            </div>
-            <div class="project">
-                <img src="./img/XOR.png" alt="Project 2">
-                <h4>Simple XOR Encryption</h4>
-                <a href="https://github.com/jackiesogi/Simple_XOR_Encryption" target="_blank" style="text-align: left;">Take a look at Simple_XOR_Encryption on Github</a>
-                <p>SimpleXOREncrytion is a terminal tool that helps users encrypt some confidential files and switch the encryption status by simply opening and closing.</p>
-            </div>
-            <div class="project">
-                <img src="./img/db.png" alt="Project 3">
-                <h4>Rebis DB</h4>
-                <a href="https://github.com/jackiesogi/SimpleDB/tree/rebis-backup" target="_blank" style="text-align: left;">Take a look at Rebis DB on Github</a>
-                <p>This is a program written in tribute to the Redis open source project, so it is named Rebis. It is a relatively simple version of the keyvalue database implementation, but it has an access speed 30 times faster than the Redis database.</p>
-            </div>
-            <div class="project">
-                <img src="./img/ve.png" alt="Project 4">
-                <h4>Simpledit Video Editor（still under development）</h4>
-                <a href="https://github.com/jackiesogi/GTK-video-editor/tree/ffmpeg" target="_blank" style="text-align: left;">Take a look at Simpledit on Github</a>
-                <p>This is a ligthweight video editor rely on ffmpeg and gtkmm technology, aims to become a good choice for those who want to edit their video on linux platform without installing some application that might take GB on your disk.</p>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
-    
-    <section id="contact" class="section">
-        <div class="content">
-            <h2>Contact</h2>
-            <p>Contact me at: <a href="mailto:jck.tux@pm.me" class="contact-link">jck.tux@pm.me</a></p>
-        </div>
-    </section>    
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./style.css">
+		<!-- Bootstrap CDN -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+		<!-- Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<style>
+		        .navbar {
+            			padding: 0.5rem 1rem;
+        		}
+        		.btn-lang {
+            			display: flex;
+            			align-items: center;
+            			justify-content: center;
+        		}
+    		</style>
 
-    <footer>
-        <p>&copy; 2023 Jackie Chen</p>
-    </footer>
-    <script src="./smooth-scroll.js"></script>
-</body>
+		<title>Oh Jackie - Personal Webpage</title>
+
+	</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Jackie's</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Experience</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Blog
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" href="https://medium.com/@Jackiesogi/list/linux-294dfd90b92e" target="_blank">Linux</a></li>
+								<li><a class="dropdown-item" href="https://medium.com/@Jackiesogi/list/net-backend-81452e5fb508" target="_blank">Back-end</a></li>
+								<li><a class="dropdown-item" href="https://medium.com/@Jackiesogi/list/security-0e239040607b" target="_blank">Security</a></li>
+								<li><a class="dropdown-item" href="https://medium.com/@Jackiesogi/list/business-f78eb38308d2" target="_blank">Business</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Dropdown link
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li><a class="dropdown-item" href="#">Something else here</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<button id="langToggle" class="btn btn-outline-light btn-lang" aria-label="Toggle Language">
+								<i class="fas fa-globe"></i>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Main content -->
+		<div class="container mt-5 pt-5">
+			<!-- Modal for alert dialog -->
+			<div class="modal fade" id="developmentAlertModal" tabindex="-1" aria-labelledby="developmentAlertModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="developmentAlertModalLabel">Heads up!</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							This page is still under development.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK, got it!</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Hero Section -->
+			<section id="home" class="hero">
+				<div class="row">
+					<!-- Text on the left -->
+					<div class="col-md-8">
+						<div class="card shadow mb-4">
+							<div class="card-body">
+								<h1 class="card-title">Jackie Chen</h1>
+								<p class="card-text">C/C++ Developer&nbsp;&nbsp;|&nbsp;&nbsp;Security Enthusiast&nbsp;&nbsp;|&nbsp;&nbsp;Linux Enthusiast</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Photo on the right -->
+					<div class="col-md-4 text-center">
+						<img src="./img/personal.jpg" alt="I use neovim by the way" class="profile-photo rounded-circle" style="width:150px;">
+					</div>
+				</div>
+			</section>
+
+			<!-- About Section -->
+			<section id="about" class="section">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<h2 class="card-title">About Me</h2>
+						<h5 class="card-title">陳首吉（Shou-Chi, Chen）</h5>
+						<p class="card-text">I'm a passionate student from NCU (Taiwan) with a strong curiosity for low-level programming and Linux exploration. I dabble in kernel tinkering and create small, custom terminal tools for fun and learning.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Portfolio Section -->
+			<section id="portfolio" class="section">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<h2 class="card-title">Portfolio</h2>
+						<!-- Add your portfolio projects here -->
+					</div>
+				</div>
+			</section>
+
+			<!-- Projects Section -->
+			<section id="projects" class="section">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<h2 class="card-title">Projects</h2>
+
+						<!-- Project 1 -->
+						<div class="card mb-3">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<img src="./img/pairup.png" alt="Project 1" class="img-fluid rounded-start">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h5 class="card-title">PairUP</h5>
+										<a href="https://github.com/jackiesogi/PairUP" target="_blank">Take a look at PairUP on Github</a>
+										<p class="card-text">PairUP is a project established for an English-speaking study group. It solves the problem of manually matching practice partners every day, improving operational efficiency.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 2 -->
+						<div class="card mb-3">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<img src="./img/XOR.png" alt="Project 2" class="img-fluid rounded-start">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h5 class="card-title">Simple XOR Encryption</h5>
+										<a href="https://github.com/jackiesogi/Simple_XOR_Encryption" target="_blank">Take a look at Simple_XOR_Encryption on Github</a>
+										<p class="card-text">A terminal tool for simple file encryption, allowing easy encryption and decryption.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 3 -->
+						<div class="card mb-3">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<img src="./img/db.png" alt="Project 3" class="img-fluid rounded-start">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h5 class="card-title">Rebis DB</h5>
+										<a href="https://github.com/jackiesogi/SimpleDB/tree/rebis-backup" target="_blank">Take a look at Rebis DB on Github</a>
+										<p class="card-text">A key-value database implementation, inspired by Redis, with improved access speed.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 4 -->
+						<div class="card mb-3">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<img src="./img/ve.png" alt="Project 4" class="img-fluid rounded-start">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h5 class="card-title">Simpledit Video Editor (In Development)</h5>
+										<a href="https://github.com/jackiesogi/GTK-video-editor/tree/ffmpeg" target="_blank">Take a look at Simpledit on Github</a>
+										<p class="card-text">A lightweight video editor built using ffmpeg and GTKmm for Linux users.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact Section -->
+			<section id="contact" class="section">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<h2 class="card-title">Contact</h2>
+						<p>Contact me at <a href="mailto:jck.tux@pm.me" class="contact-link">jck.tux@pm.me</a> or Try <a href="chatbot.html">asking my AI chatbot</a></p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer class="text-center mt-5">
+				<p>&copy; 2024 Jackie Chen</p>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script>
+			// Automatically open the modal when the page loads
+			document.addEventListener("DOMContentLoaded", function() {
+							var myModal = new bootstrap.Modal(document.getElementById('developmentAlertModal'));
+							myModal.show();
+						});
+
+			// Translation data for English and Chinese
+			const translations = {
+							en: {
+											name: "Jackie Chen",
+											description: "C/C++ Developer | Security Enthusiast | Linux Enthusiast"
+										},
+							zh: {
+											name: "陳首吉",
+											description: "C/C++ 開發者 | 安全愛好者 | Linux 愛好者"
+										}
+						};
+
+			let currentLanguage = 'en'; // Default language is English
+
+			// Function to toggle between English and Chinese
+			function toggleLanguage() {
+							currentLanguage = (currentLanguage === 'en') ? 'zh' : 'en';
+							document.getElementById('name').textContent = translations[currentLanguage].name;
+							document.getElementById('description').textContent = translations[currentLanguage].description;
+						}
+
+			// Event listener for the toggle button
+			document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+		</script>
+		<script src="./smooth-scroll.js"></script>
+	</body>
 </html>
+
