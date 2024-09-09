@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
 	    // DO NOT WANT TO DO SOMETHING WIERD TO THIS ENDPOINT, IT HAS FIREWALL 
-            const response = await fetch('https://34.80.67.36/chat', {
+            const response = await fetch('https://jackiesogi.com/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: userInputValue, mode: modeSelect.value })
