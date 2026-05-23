@@ -6,7 +6,6 @@ viewport: 'width=device-width, initial-scale=1.0, user-scalable=yes'
 
 ># Jackie (Shou-Chi) Chen
 
-+886 916-028-116
 [**Mail**](mailto:jck.tux@proton.me)
 [**GitHub**](https://github.com/jackiesogi)
 [**LinkedIn**](https://www.linkedin.com/in/jckchen-6a0b58252/)
@@ -144,7 +143,6 @@ Writing skills / Technical posts / Linux / IT
 
 **SKILLS**
 
-**Programming Languages:** C / C++ / C\# / Java / Python / Bash
+**Programming Languages:** `C` `C++` `C#` `Java` `Python` `Bash`
 
-**Software Development:** Testing / Docker / Git / Jenkins / CI/CD /
-CMake / Autoconf / Unix-Linux environments
+**Software Development:** `Testing` `Docker` `Git` `Jenkins` `CI/CD` `CMake` `Autoconf` `Unix-Linux environments`
