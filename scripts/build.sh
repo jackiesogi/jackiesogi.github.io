@@ -8,6 +8,12 @@ TEMPLATE="templates/layout.html"
 rm -rf "$DIST"
 mkdir -p "$DIST"
 
+# Copy images
+if [ -d "$SRC/img" ]; then
+    cp -r "$SRC/img" "$DIST/img"
+    echo "  [copied] img/ → dist/img/"
+fi
+
 find "$SRC" -name "*.md" -print0 | while IFS= read -r -d '' file; do
     rel="${file#$SRC/}"
     out="$DIST/${rel%.md}.html"

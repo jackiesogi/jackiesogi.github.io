@@ -188,6 +188,10 @@
     table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
     th, td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
     th { color: var(--accent); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    /* === IMAGES === */
+    img { max-width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); cursor: pointer; transition: transform 0.2s; }
+    img:hover { transform: scale(1.02); }
 
     /* === RESPONSIVE === */
     @media (max-width: 600px) {
@@ -198,6 +202,28 @@
       blockquote + p a { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const imgs = document.querySelectorAll('img');
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center;';
+      const preview = document.createElement('img');
+      preview.style.cssText = 'max-width:90%;max-height:90%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.6);';
+      overlay.appendChild(preview);
+      document.body.appendChild(overlay);
+
+      imgs.forEach(img => {
+        img.addEventListener('click', () => {
+          preview.src = img.src;
+          overlay.style.display = 'flex';
+        });
+      });
+
+      overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="page">
