@@ -1,0 +1,13 @@
+These are a github.io webpage source, separated into multiple
+directories:
+
+1. src/     : markdown source files.
+2. dist/    : html output files.
+3. scripts/ : scripts to build web page from md source.
+4. assets/  : static assets that pages needed.
+5. themes/  : contains serveral css themes.
+
+To start, run `bash scripts/build.sh`
+
+Note that currently the markdown to html styling process has not been
+fully done yet, we actually manually operate the index.html manually.
