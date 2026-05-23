@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firmware_Engineer_Intern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface2: #1c1c1c;
+      --border: #262626;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #22c55e;
+      --accent-dim: rgba(34,197,94,0.08);
+      --link: #60a5fa;
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* === LAYOUT === */
+    .page { max-width: 960px; margin: 0 auto; padding: 4rem 2.5rem; }
+
+    /* === HERO (blockquote) === */
+    blockquote {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2.5rem 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    blockquote::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--link));
+    }
+    blockquote h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    blockquote p { color: var(--text-muted); margin: 0; }
+
+    /* === CONTACT ROW (first p after blockquote) === */
+    blockquote + p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    blockquote + p a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    blockquote + p a:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* === SECTION HEADINGS === */
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-top: 3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* === ENTRY HEADINGS (h3) — card style === */
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #fff;
+      margin-top: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+    h3 a {
+      color: #fff;
+      border-bottom: 1px dashed var(--border);
+      transition: border-color 0.2s;
+    }
+    h3 a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* === DATE/SUBTITLE (p right after h3) === */
+    h3 + p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* === LISTS === */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1.5rem;
+    }
+    li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin: 0.4rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    li strong { color: var(--text); }
+    li a { color: var(--link); }
+
+    /* === PARAGRAPHS === */
+    p { margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-muted); }
+    p strong { color: var(--text); }
+    p a { color: var(--link); border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    p a:hover { border-bottom-color: var(--link); }
+
+    /* === CODE === */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+      color: var(--accent);
+      display: inline-block;
+      margin: 0.2rem 0.2rem;
+      font-weight: 500;
+    }
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem 1.5rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code { background: none; border: none; padding: 0; color: var(--text); font-size: 0.82rem; line-height: 1.7; }
+
+    /* === HR === */
+    hr { border: none; height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+    /* === TABLE === */
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    th, td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
+    th { color: var(--accent); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    /* === IMAGES === */
+    img { max-width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); cursor: pointer; transition: transform 0.2s; }
+    img:hover { transform: scale(1.02); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      .page { padding: 2rem 1rem; }
+      blockquote { padding: 1.5rem; }
+      blockquote h1 { font-size: 1.6rem; }
+      blockquote + p { gap: 0.4rem; }
+      blockquote + p a { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const imgs = document.querySelectorAll('img');
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center;';
+      const preview = document.createElement('img');
+      preview.style.cssText = 'max-width:90%;max-height:90%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.6);';
+      overlay.appendChild(preview);
+      document.body.appendChild(overlay);
+
+      imgs.forEach(img => {
+        img.addEventListener('click', () => {
+          preview.src = img.src;
+          overlay.style.display = 'flex';
+        });
+      });
+
+      overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="page">
+    <blockquote>
+    <h1 id="jackie-shou-chi-chen">Jackie (Shou-Chi) Chen</h1>
+    </blockquote>
+    <p><a href="./index.html"><strong>Education</strong></a> <a href="./experience.html"><strong>Experience</strong></a> <a href="./sideproject.html"><strong>Side Projects</strong></a> <a href="./opensource.html"><strong>Open Source</strong></a> <a href="./hobbies.html"><strong>Hobbies</strong></a> <a href="./contact.html"><strong>Contact</strong></a> <a href="./product.html"><strong>Available Products</strong></a></p>
+    <h2 id="contact-links">Contact &amp; Links</h2>
+    <p><a href="mailto:jck.tux@proton.me"><strong>Mail</strong></a> <a href="https://github.com/jackiesogi"><strong>GitHub</strong></a> <a href="https://www.linkedin.com/in/jckchen-6a0b58252/"><strong>LinkedIn</strong></a> <a href="https://medium.com/@Jackiesogi"><strong>Blog</strong></a></p>
+  </div>
+</body>
+</html>
