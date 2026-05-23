@@ -9,14 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f0f0f;
-      --surface: #1a1a1a;
-      --border: #2a2a2a;
-      --text: #e0e0e0;
-      --text-muted: #888;
-      --accent: #42b983;
-      --link: #5cb3ff;
-      --radius: 12px;
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface2: #1c1c1c;
+      --border: #262626;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #22c55e;
+      --accent-dim: rgba(34,197,94,0.08);
+      --link: #60a5fa;
+      --radius: 16px;
+      --radius-sm: 8px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -24,41 +27,141 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      padding: 2rem 1rem;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 800px; margin: 0 auto; }
-    h1, h2, h3 { font-weight: 600; }
-    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; }
-    h2 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 { font-size: 1rem; color: #fff; margin-top: 1.2rem; margin-bottom: 0.3rem; }
-    a { color: var(--link); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--accent); }
-    p { margin: 0.5rem 0; }
-    ul { padding-left: 1.4rem; margin: 0.4rem 0; }
-    li { margin: 0.3rem 0; color: var(--text-muted); }
-    li strong, li a { color: var(--text); }
+
+    /* === LAYOUT === */
+    .page { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem; }
+
+    /* === HERO (blockquote) === */
     blockquote {
-      background: var(--surface);
-      border-left: 3px solid var(--accent);
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.5rem 2rem;
-      margin: 0 0 1.5rem 0;
+      padding: 2.5rem 2.5rem 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
     }
-    blockquote h1 { font-size: 2rem; margin: 0; }
-    blockquote p { margin: 0; color: var(--text-muted); }
+    blockquote::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--link));
+    }
+    blockquote h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    blockquote p { color: var(--text-muted); margin: 0; }
+
+    /* === CONTACT ROW (first p after blockquote) === */
+    blockquote + p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    blockquote + p a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    blockquote + p a:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* === SECTION HEADINGS === */
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-top: 3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* === ENTRY HEADINGS (h3) — card style === */
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #fff;
+      margin-top: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+    h3 a {
+      color: #fff;
+      border-bottom: 1px dashed var(--border);
+      transition: border-color 0.2s;
+    }
+    h3 a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* === DATE/SUBTITLE (p right after h3) === */
+    h3 + p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* === LISTS === */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1.5rem;
+    }
+    li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin: 0.4rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    li strong { color: var(--text); }
+    li a { color: var(--link); }
+
+    /* === PARAGRAPHS === */
+    p { margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-muted); }
+    p strong { color: var(--text); }
+    p a { color: var(--link); border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    p a:hover { border-bottom-color: var(--link); }
+
+    /* === CODE === */
     code {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85em;
+      font-size: 0.8em;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 4px;
@@ -68,25 +171,33 @@
     pre {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: var(--radius-sm);
       padding: 1.2rem 1.5rem;
       overflow-x: auto;
       margin: 1rem 0;
     }
-    pre code { background: none; border: none; padding: 0; color: var(--text); font-size: 0.85rem; line-height: 1.6; }
-    hr { border: none; height: 1px; background: var(--border); margin: 2rem 0; }
-    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th, td { text-align: left; padding: 0.6rem 1rem; border: 1px solid var(--border); }
-    th { background: var(--surface); color: var(--accent); font-weight: 500; }
+    pre code { background: none; border: none; padding: 0; color: var(--text); font-size: 0.82rem; line-height: 1.7; }
+
+    /* === HR === */
+    hr { border: none; height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+    /* === TABLE === */
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    th, td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
+    th { color: var(--accent); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* === RESPONSIVE === */
     @media (max-width: 600px) {
-      body { padding: 1rem 0.5rem; }
-      h1 { font-size: 1.4rem; }
-      blockquote { padding: 1rem 1.2rem; }
+      .page { padding: 2rem 1rem; }
+      blockquote { padding: 1.5rem; }
+      blockquote h1 { font-size: 1.6rem; }
+      blockquote + p { gap: 0.4rem; }
+      blockquote + p a { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="page">
     $body$
   </div>
 </body>
