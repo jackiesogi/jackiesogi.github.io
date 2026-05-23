@@ -1,37 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>$title$</title>
-
-  <!-- <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/themes/default.css"> -->
-  <link rel="stylesheet" href="/themes/vue.css">
-  
-  <!-- Modern Google Fonts: Inter (body) + JetBrains Mono (code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e0e0e0;
+      --text-muted: #888;
+      --accent: #42b983;
+      --link: #5cb3ff;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1, h2, h3 { font-weight: 600; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; }
+    h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1rem; color: #fff; margin-top: 1.2rem; margin-bottom: 0.3rem; }
+    a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+    p { margin: 0.5rem 0; }
+    ul { padding-left: 1.4rem; margin: 0.4rem 0; }
+    li { margin: 0.3rem 0; color: var(--text-muted); }
+    li strong, li a { color: var(--text); }
+    blockquote {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin: 0 0 1.5rem 0;
+    }
+    blockquote h1 { font-size: 2rem; margin: 0; }
+    blockquote p { margin: 0; color: var(--text-muted); }
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      color: var(--accent);
+    }
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code { background: none; border: none; padding: 0; color: var(--text); font-size: 0.85rem; line-height: 1.6; }
+    hr { border: none; height: 1px; background: var(--border); margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { text-align: left; padding: 0.6rem 1rem; border: 1px solid var(--border); }
+    th { background: var(--surface); color: var(--accent); font-weight: 500; }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      h1 { font-size: 1.4rem; }
+      blockquote { padding: 1rem 1.2rem; }
+    }
+  </style>
 </head>
-
 <body>
-    <nav class="main-nav">
-      <a href="/index.html">Home</a>
-      <!--
-      <a href="/about.html">About</a>
-      <a href="/portfolio.html">Portfolio</a>
-      -->
-    </nav>
-
-    <div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; width: 100%; padding: 2rem 1rem;">
-      <div class="card shadow-sm" style="max-width: 1000px; width: 95%;">
-        <div class="card-body">
-          <div class="markdown-preview">
-            $body$
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    $body$
+  </div>
 </body>
 </html>
